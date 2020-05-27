@@ -1,0 +1,13 @@
+
+> instadev@0.1.0 submit C:\Users\Miyoko\codenation\react-16
+> react-scripts test src/__tests__/submit.test.js --reporters=default --reporters=jest-junit "--watchAll=false"
+
+  console.error node_modules/react-dom/cjs/react-dom.development.js:88
+    Warning: Expected `onClick` listener to be a function, instead got a value of `object` type.
+        in button (at Story.jsx:32)
+        in div (at Story.jsx:23)
+        in div (at Story.jsx:22)
+        in section (at Story.jsx:21)
+        in Story (at submit.test.js:63)
+        in Router (at submit.test.js:62)
+

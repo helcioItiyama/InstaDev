@@ -7,7 +7,10 @@ import UserPosts from '../../containers/UserPosts';
 import Loading from '../../components/Loading';
 
 const ProfileRoute = () => {
-  const [ profiles, setProfiles ] = useState([]);
+  const [ name, setName ] = useState('');
+  const [ id, setId ] = useState('');
+  const [ avatar, setAvatar ] = useState('');
+  const [ nickname, setNickname ] = useState('');
   const [ posts, setPosts ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true)
   const { username } = useParams();
@@ -15,14 +18,15 @@ const ProfileRoute = () => {
   useEffect(() => {
     async function getUsers(){
       const response = await fetch(`https://5e7d0266a917d70016684219.mockapi.io/api/v1/users?search=${username}`)
-      const data = await response.json();
-      setProfiles(data[0]);
+      const [data] = await response.json();
+      setName(data.name);
+      setId(data.id);
+      setAvatar(data.avatar);
+      setNickname(data.username);
     }
     
     getUsers();
-    }, [username]);
-
-  const id = profiles.id;
+    }, [name, id, avatar, username]);
 
   useEffect(() => {
     if(id) {
@@ -40,7 +44,7 @@ const ProfileRoute = () => {
   return (
     
     <div data-testid="profile-route">
-      <UserProfile profiles={profiles}/>
+      <UserProfile name={name} avatar={avatar} username={nickname}/>
 
       {isLoading > 0 
           ? <Loading/>

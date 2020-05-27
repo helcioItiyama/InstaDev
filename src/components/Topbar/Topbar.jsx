@@ -23,7 +23,7 @@ const Topbar = () => (
         </div>
         
         <div className="topbar__icon">
-          <Link to="#">
+          <Link to="/newuser">
             <FaUserPlus/>
             <span>Nova Conta</span>
           </Link>

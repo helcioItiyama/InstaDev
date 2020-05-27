@@ -3,8 +3,7 @@ import React from 'react';
 
 import './UserProfile.scss';
 
-const UserProfile = ({ profiles }) => {
-  const { avatar, name, username } = profiles;
+const UserProfile = ({avatar, name, username }) => {
   return (
     <section className="profile" data-testid="user-profile">
       <div className="container">

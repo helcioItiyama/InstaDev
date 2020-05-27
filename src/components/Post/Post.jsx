@@ -9,6 +9,8 @@ const Post = ({ postInfo, userInfo }) => {
   const [ follow, setFollow ] = useState(false);
   const [ liked, setLiked ] = useState(false);
 
+  const { imageUrl, comments} = postInfo;
+
   return (
     <article className="post" data-testid="post">
       { userInfo && 
@@ -28,7 +30,7 @@ const Post = ({ postInfo, userInfo }) => {
       }
 
       <section className="post__figure">
-        <img src={postInfo.imageUrl} alt=""/>
+        <img src={imageUrl} alt=""/>
       </section>
 
       { userInfo && (
@@ -40,11 +42,11 @@ const Post = ({ postInfo, userInfo }) => {
             }
           </button>
           
-          { userInfo && postInfo.comments.length > 0 && (
+          { userInfo && comments.length > 0 && (
             <div className="post__status">
               <div className="user">
-                <span>curtido por <Link to="/">{postInfo.comments[0].name}</Link> e outra{((postInfo.comments.length - 1) + liked) > 1 && 's'}
-                  <Link to="/"> {(postInfo.comments.length - 1) + liked} pessoa{((postInfo.comments.length -1) + liked) > 1 && 's'}.</Link>
+                <span>curtido por <Link to="/">{comments[0].name}</Link> e outra{((comments.length - 1) + liked) > 1 && 's'}
+                  <Link to="/"> {(comments.length - 1) + liked} pessoa{((comments.length -1) + liked) > 1 && 's'}.</Link>
                 </span>
               </div>
             </div>
