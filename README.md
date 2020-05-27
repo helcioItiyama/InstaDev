@@ -9,14 +9,14 @@ This project was developed during Codenation Bootcamp using ReactJS.
 
 ## :arrow_right: In this challenge it was used pratical knowledges of:
 
-Fetch API
-Funcional JS
-Modularization
-Presentational & Container Components
-Rails-Style Structure + Module Index
-React Hooks useState, useEffect
-React Testing Library
-React
+- Fetch API
+- Funcional JS
+- Modularization
+- Presentational & Container Components
+- Rails-Style Structure + Module Index
+- React Hooks useState, useEffect
+- React Testing Library
+- React
 
 ## :information_source: HOW TO RUN THE APPLICATION
 
